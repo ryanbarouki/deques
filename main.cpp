@@ -21,6 +21,19 @@ int main()
         std::cout << num << std::endl;
     }
 
+    {
+		Deque<std::string> strings;
+
+		strings.pushBack("Hello");
+		strings.pushBack("there");
+		strings.pushBack("General");
+		strings.pushBack("Kenobi");
+
+		for (auto word : strings) 
+		{
+			std::cout << word << std::endl;
+		}
+    }
     std::cout << "Hello there" << std::endl;
     std::cin.get();
     return 0;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <variant>
+#include <iostream>
 
 template<class Item>
 class Deque {
@@ -37,6 +38,17 @@ private:
     int m_size;
 public:
     Deque() : head(nullptr), tail(nullptr), m_size(0){}
+    ~Deque()
+    {
+        auto p = head;
+        while(p != nullptr)
+        {
+            auto temp = p;
+            p = p->next;
+            std::cout << "deleting: " << temp->data << std::endl;
+            delete temp;
+        }
+    }
     bool isEmpty()
     {
         return m_size == 0;
